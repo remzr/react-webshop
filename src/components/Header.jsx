@@ -2,12 +2,14 @@ function Header() {
     return(
         <header>
                 <div>
-                    <button>Icon</button>
+                    <a href="">Icon</a>
                 </div>
                 <nav>
-                    <button>Home</button>
-                    <button>Shop</button>
-                    <button>Cart</button>
+                    <ul>
+                        <li><Link to="/home">Home</Link></li>
+                        <li><Link to="/shop">Shop</Link></li>
+                        <li><Link to="/cart">Cart</Link></li>
+                    </ul>
                 </nav>
         </header>
     )
