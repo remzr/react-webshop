@@ -1,13 +1,18 @@
+import Header from "../components/Header"
+
 function Shop() {
 
   return (
     <>
-        <h1 class="text-3x1 font-bold underline">
+    <Header />
+    <main>
+        <h1 className="text-3x1 font-bold underline">
             Shop
         </h1>
-        <p class="text-3x1">
+        <p className="text-3x1">
             Here you can see our products      
         </p>
+    </main>
     </>
   )
 }
