@@ -8,12 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <h1 class="text-3x1 font-bold underline">
-        Webshop
-      </h1>
-      <p class="text-3x1">
-        This is some text
-      </p>
+      <Home />
     </>
   )
 }
