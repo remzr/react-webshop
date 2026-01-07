@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -8,8 +6,10 @@ function App() {
 
   return (
     <>
-      <h1>Webshop</h1>
-      <p className="hero-text">
+      <h1 class="text-3x1 font-bold underline">
+        Webshop
+      </h1>
+      <p class="text-3x1">
         This is some text
       </p>
     </>
