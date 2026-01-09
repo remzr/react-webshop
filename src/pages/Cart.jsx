@@ -5,7 +5,7 @@ function Cart() {
   return (
     <>
     <Header />
-    <main>
+    <main className="p-8 bg-zinc-200">
       <h1 className="text-3x1 font-bold underline">
         Shoppingcart
       </h1>

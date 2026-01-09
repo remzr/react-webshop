@@ -6,7 +6,7 @@ function Shop() {
     <>
     <Header />
     <main>
-        <h1 className="text-3x1 font-bold underline">
+        <h1 className="p-8 text-3x1 font-bold underline">
             Shop
         </h1>
         <p className="text-3x1">
