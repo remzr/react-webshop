@@ -6,11 +6,11 @@ function Shop() {
   return (
     <>
     <Header />
-    <main>
-        <h1 className="p-8 text-3x1 font-bold underline">
+    <main className="p-8 bg-zinc-800">
+        <h1 className="pb-8 font-default text-zinc-200 text-6xl font-bold">
             Shop
         </h1>
-        <div className="w-full p-8 flex gap-4 flex-wrap">
+        <div className="w-full flex gap-4 flex-wrap">
           <Product />
           <Product />
           <Product />
