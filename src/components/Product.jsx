@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 function Product({
+    cartContent,
+    setCartContent,    
+    product,
     productImg = "src/assets/placeholder.png", 
     productAlt = "", 
     productName = "Item loading", 
@@ -8,6 +11,19 @@ function Product({
 }) {
 
     const [cartAmount, setCartAmount] = useState(1);    
+
+    //Push product to cart
+    function pushToCart() {
+
+        //Add cart amount
+        product.amount = product.amount + cartAmount;
+
+        setCartContent({
+            ...cartContent,
+            product
+        })
+        console.log(`${product.name} has been added to cart ${product.amount} times.`);
+    }
 
     return (
        <div className="w-1/7 min-w-full rounded-lg mb-4 bg-zinc-900 sm:min-w-52">
@@ -23,7 +39,7 @@ function Product({
         <div className="flex items-stretch p-2 w-full mt-2">
             <button 
                 className="w-2/3 h-10 bg-emerald-400 px-2 py-1 rounded-l-md"
-                onClick=""
+                onClick={pushToCart}
                 >
                 Add to cart
             </button>

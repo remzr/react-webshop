@@ -1,7 +1,7 @@
 import Header from "../components/Header"
 import Product from "../components/Product"
 
-function Shop({inventoryData,cartContent}) {
+function Shop({inventoryData, cartContent, setCartContent}) {
 
   return (
     <>
@@ -14,6 +14,8 @@ function Shop({inventoryData,cartContent}) {
           {inventoryData.length > 0 && (
 
             <Product
+              cartContent={cartContent}
+              setCartContent={setCartContent}
               product={inventoryData[0]}     
               productName={inventoryData[0].name}
               productPrice ={inventoryData[0].id}

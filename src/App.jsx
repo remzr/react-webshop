@@ -31,7 +31,8 @@ function App() {
     path: "shop",
     element: <Shop 
       inventoryData={inventoryData}
-      cartContent={cartContent}/>,
+      cartContent={cartContent}
+      setCartContent={setCartContent}/>
   },
   {
     path: "cart",

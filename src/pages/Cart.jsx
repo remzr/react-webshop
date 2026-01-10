@@ -10,7 +10,7 @@ function Cart({cartContent}) {
         Shoppingcart
       </h1>
       <p className="text-3x1">
-        {cartContent}
+        {cartContent.length}
       </p>
       <button>Checkout</button>
     </main>
