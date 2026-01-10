@@ -10,25 +10,25 @@ function Product({
     const [cartAmount, setCartAmount] = useState(1);    
 
     return (
-       <div className="w-1/7 min-w-full mb-4 sm:min-w-52">
+       <div className="w-1/7 min-w-full rounded-lg mb-4 bg-zinc-900 sm:min-w-52">
         <div>
-            <img src={productImg} alt={productAlt}></img>
-            <h2 className="text-2xl font-bold text-zinc-200">
+            <img className="rounded-t-lg" src={productImg} alt={productAlt}></img>
+            <h2 className="text-2xl pl-2 pt-2 font-bold text-zinc-200">
                 {productName}
             </h2>
-            <p className=" text-lg text-zinc-200">
+            <p className=" text-lg pl-2 text-zinc-200">
                 {productPrice}
             </p>
         </div>
-        <div className="flex items-stretch w-full mt-2">
+        <div className="flex items-stretch p-2 w-full mt-2">
             <button 
-                className="w-2/3 h-10 bg-emerald-400 px-2 py-1 rounded-xs"
+                className="w-2/3 h-10 bg-emerald-400 px-2 py-1 rounded-l-md"
                 onClick=""
                 >
                 Add to cart
             </button>
             <input 
-                className="w-1/3 h-10 bg-zinc-800 border-solid border-emerald-400 border-2 rounded-xs text-zinc-200 pl-4"
+                className="w-1/3 h-10 bg-zinc-800 border-solid border-emerald-400 border-2 rounded-r-md text-center text-zinc-200"
                 onChange={e => setCartAmount(e.target.value)}
                 type="number"
                 value={cartAmount}
