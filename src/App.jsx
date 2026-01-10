@@ -10,6 +10,7 @@ function App() {
 
   //Hooks and variables
   const [inventoryData, setInventoryData] = useState([]);
+  const [cartContent, setCartContent] = useState([]);
 
   //Fetch shop data
   useEffect(() => {
@@ -23,15 +24,19 @@ function App() {
   const router = createBrowserRouter([
     {
     path: "/",
-    element: <Home />,
+    element: <Home 
+      cartContent={cartContent}/>,
   },
   {
     path: "shop",
-    element: <Shop inventoryData={inventoryData}/>,
+    element: <Shop 
+      inventoryData={inventoryData}
+      cartContent={cartContent}/>,
   },
   {
     path: "cart",
-    element: <Cart />,
+    element: <Cart 
+    cartContent={cartContent}/>,
   }
 ])
 

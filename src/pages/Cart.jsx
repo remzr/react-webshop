@@ -1,16 +1,16 @@
 import Header from "../components/Header"
 
-function Cart() {
+function Cart({cartContent}) {
 
   return (
     <>
-    <Header />
+    <Header cartContent={cartContent} />
     <main className="p-8 bg-zinc-200">
       <h1 className="text-3x1 font-bold underline">
         Shoppingcart
       </h1>
       <p className="text-3x1">
-        You have these items in your Cart
+        {cartContent}
       </p>
       <button>Checkout</button>
     </main>

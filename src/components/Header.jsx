@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router";
 import { GiAbstract005 } from "react-icons/gi";
 
-function Header() {
+function Header({cartContent}) {
     return(
         <header className="flex w-full justify-between px-8 py-4 bg-zinc-900">
                 <div className="w-20 flex-none">
@@ -44,6 +44,11 @@ function Header() {
                             }>
                             Cart
                             </NavLink>
+                                {cartContent > 0 && (
+                                    <div className="text-zinc-200 bg-emerald-500 h-2 w-2 rounded-full">
+                                        {cartContent.length}
+                                    </div>
+                                )}
                         </li>
                     </ul>
                 </nav>
