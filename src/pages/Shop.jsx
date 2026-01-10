@@ -6,7 +6,7 @@ function Shop({inventoryData}) {
   return (
     <>
     <Header />
-    <main className="p-8 bg-black">
+    <main className="p-8 bg-black min-h-dvh">
         <h1 className="pb-8 font-default text-zinc-200 text-6xl font-bold">
             Shop
         </h1>
@@ -14,7 +14,10 @@ function Shop({inventoryData}) {
           {inventoryData.length > 0 && (
             <Product     
               productName={inventoryData[0].name}
-              productPrice ="Price on demand" />
+              productPrice ={inventoryData[0].id}
+              productImg={inventoryData[0].image}
+              productAlt={inventoryData[0].name}
+            />
           )}
         </div>
     </main>

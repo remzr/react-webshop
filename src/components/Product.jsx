@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Product({
     productImg = "src/assets/placeholder.png", 
     productAlt = "", 
@@ -5,14 +7,30 @@ function Product({
     productPrice = "Price on demand"
 }) {
 
+    const [cartAmount, setCartAmount] = useState(1);    
+
     return (
        <div className="w-1/7 min-w-full mb-4 sm:min-w-52">
         <div>
             <img src={productImg} alt={productAlt}></img>
-            <h2 className="text-2xl font-bold text-zinc-200">{productName}</h2>
-            <p className=" text-lg text-zinc-200">{productPrice}</p>
+            <h2 className="text-2xl font-bold text-zinc-200">
+                {productName}
+            </h2>
+            <p className=" text-lg text-zinc-200">
+                {productPrice}
+            </p>
         </div>
-        <button className="bg-emerald-400 px-2 py-1 rounded-xs mt-2">Add to cart</button>
+        <form className="flex items-stretch w-full mt-2">
+            <button className="w-2/3 h-10 bg-emerald-400 px-2 py-1 rounded-xs">
+                Add to cart
+            </button>
+                <input 
+                    className="w-1/3 h-10 bg-zinc-800 border-solid border-emerald-400 border-2 rounded-xs text-zinc-200 pl-4"
+                    type="number"
+                    value={cartAmount}
+                    name="cartAmount"
+                    id="cartAmount"/>         
+        </form>
        </div>
   )
 }
