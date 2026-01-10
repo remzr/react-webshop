@@ -1,12 +1,12 @@
 import Header from "../components/Header"
 import Product from "../components/Product"
 
-function Shop() {
+function Shop({inventoryData}) {
 
   return (
     <>
     <Header />
-    <main className="p-8 bg-zinc-800">
+    <main className="p-8 bg-black">
         <h1 className="pb-8 font-default text-zinc-200 text-6xl font-bold">
             Shop
         </h1>

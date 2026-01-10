@@ -1,4 +1,9 @@
-function Product({productImg = "src/assets/placeholder.png", productAlt = "", productName = "Item loading", productPrice = "Price on demand"}) {
+function Product({
+    productImg = "src/assets/placeholder.png", 
+    productAlt = "", 
+    productName = "Item loading", 
+    productPrice = "Price on demand"
+}) {
 
     return (
        <div className="w-1/7 min-w-full mb-4 sm:min-w-52">

@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import './App.css'
-import Header from './components/Header'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Shop from './pages/Shop'
 
 //Hooks and variables
-
-
 const inventoryData = [];
+
+//Fetch shop data
+fetch("https://api.open5e.com/monsters/")
+  .then(res => res.json())
+  .then(data => console.log(data));
 
 
 const router = createBrowserRouter([
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "shop",
-    element: <Shop />,
+    element: <Shop inventoryData={inventoryData}/>,
   },
   {
     path: "cart",

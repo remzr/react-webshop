@@ -7,7 +7,7 @@ function Header() {
                 <div className="w-20 flex-none">
                     <Link className="p-2 flex justify-between items-center" to="/">
                         <GiAbstract005 size={50} className="flex-none rounded-sm text-white bg-emerald-500"/>
-                        <a className="font-default text-2xl/6 pl-2 font-medium text-zinc-200 inline"><strong>Trazyn's</strong><br />Vault</a>
+                        <span className="font-default text-2xl/6 pl-2 font-medium text-zinc-200 inline"><strong>Trazyn's</strong><br />Vault</span>
                     </Link>
                 </div>
                 <nav className="w-80">
