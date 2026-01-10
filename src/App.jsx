@@ -6,6 +6,12 @@ import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Shop from './pages/Shop'
 
+//Hooks and variables
+
+
+const inventoryData = [];
+
+
 const router = createBrowserRouter([
     {
     path: "/",
@@ -14,10 +20,6 @@ const router = createBrowserRouter([
   {
     path: "shop",
     element: <Shop />,
-    /*children: [
-      { path: "spinach", element: <Spinach /> },
-      { path: "popeye", element: <Popeye /> },
-    ],*/
   },
   {
     path: "cart",
