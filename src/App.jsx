@@ -1,20 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import './App.css'
+
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Shop from './pages/Shop'
 
-//Hooks and variables
-const inventoryData = [];
+function App() {
 
-//Fetch shop data
-fetch("https://api.open5e.com/monsters/")
-  .then(res => res.json())
-  .then(data => console.log(data));
+  //Hooks and variables
+  const [inventoryData, setInventoryData] = useState([]);
 
+  //Fetch shop data
+  useEffect(() => {
+    fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/category/equipment")
+      .then(res => res.json())
+      .then(json => {
+        setInventoryData(json.data);
+    });
+  }, []);
 
-const router = createBrowserRouter([
+  const router = createBrowserRouter([
     {
     path: "/",
     element: <Home />,
@@ -28,9 +34,6 @@ const router = createBrowserRouter([
     element: <Cart />,
   }
 ])
-
-function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

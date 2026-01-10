@@ -11,18 +11,11 @@ function Shop({inventoryData}) {
             Shop
         </h1>
         <div className="w-full flex gap-4 flex-wrap">
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {inventoryData.length > 0 && (
+            <Product     
+              productName={inventoryData[0].name}
+              productPrice ="Price on demand" />
+          )}
         </div>
     </main>
     </>
