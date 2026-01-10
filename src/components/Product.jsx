@@ -20,17 +20,21 @@ function Product({
                 {productPrice}
             </p>
         </div>
-        <form className="flex items-stretch w-full mt-2">
-            <button className="w-2/3 h-10 bg-emerald-400 px-2 py-1 rounded-xs">
+        <div className="flex items-stretch w-full mt-2">
+            <button 
+                className="w-2/3 h-10 bg-emerald-400 px-2 py-1 rounded-xs"
+                onClick=""
+                >
                 Add to cart
             </button>
-                <input 
-                    className="w-1/3 h-10 bg-zinc-800 border-solid border-emerald-400 border-2 rounded-xs text-zinc-200 pl-4"
-                    type="number"
-                    value={cartAmount}
-                    name="cartAmount"
-                    id="cartAmount"/>         
-        </form>
+            <input 
+                className="w-1/3 h-10 bg-zinc-800 border-solid border-emerald-400 border-2 rounded-xs text-zinc-200 pl-4"
+                onChange={e => setCartAmount(e.target.value)}
+                type="number"
+                value={cartAmount}
+                name="cartAmount"
+                id="cartAmount"/>         
+        </div>
        </div>
   )
 }
