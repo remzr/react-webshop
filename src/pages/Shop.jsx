@@ -3,6 +3,24 @@ import Product from "../components/Product"
 
 function Shop({inventoryData, cartContent, setCartContent}) {
 
+  //Create productcards from inventoryData
+  const cardsList = inventoryData.map(item =>
+
+    <li key={item.id}>
+      {inventoryData.length > 0 && (
+
+        <Product
+          setCartContent={setCartContent}
+          product={item}     
+          productName={item.name}
+          productPrice ={item.id}
+          productImg={item.image}
+          productAlt={item.name}
+        />
+      )}
+    </li>
+  )
+
   return (
     <>
     <Header cartContent={cartContent} />
@@ -10,20 +28,7 @@ function Shop({inventoryData, cartContent, setCartContent}) {
         <h1 className="pb-8 font-default text-zinc-200 text-6xl font-bold">
             Shop
         </h1>
-        <div className="w-full flex gap-4 flex-wrap">
-          {inventoryData.length > 0 && (
-
-            <Product
-              cartContent={cartContent}
-              setCartContent={setCartContent}
-              product={inventoryData[0]}     
-              productName={inventoryData[0].name}
-              productPrice ={inventoryData[0].id}
-              productImg={inventoryData[0].image}
-              productAlt={inventoryData[0].name}
-            />
-          )}
-        </div>
+        <ul className="w-full flex gap-4 flex-wrap">{cardsList}</ul>
     </main>
     </>
   )

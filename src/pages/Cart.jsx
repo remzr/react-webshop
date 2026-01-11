@@ -1,3 +1,4 @@
+import Button from "../components/Button"
 import Header from "../components/Header"
 
 function Cart({cartContent}) {
@@ -9,10 +10,10 @@ function Cart({cartContent}) {
       <h1 className="text-3x1 font-bold underline">
         Shoppingcart
       </h1>
-      <p className="text-3x1">
+      <p className="text-3x1 mb-8">
         {cartContent.length}
       </p>
-      <button>Checkout</button>
+      <Button callToAction="Go to checkout"/>
     </main>
     </>
   )

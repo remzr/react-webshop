@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function Product({
-    cartContent,
     setCartContent,    
     product,
     productImg = "src/assets/placeholder.png", 

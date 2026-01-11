@@ -50,7 +50,7 @@ function Header({cartContent}) {
                             Cart
                             </NavLink>
                                 {cartContent.length > 0 && (
-                                    <div className="text-zinc-200 text-xs bg-emerald-500 h-4 w-4
+                                    <div className="text-zinc-200 text-xs pt-0.5 ml-1 bg-emerald-700 h-5 w-5
                                     text-center rounded-full">
                                         {totalItems}
                                     </div>
