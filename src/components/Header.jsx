@@ -8,7 +8,7 @@ function Header({cartContent}) {
     );
 
     return(
-        <header className="flex w-full justify-between px-8 py-4 bg-zinc-900">
+        <header className="flex w-full justify-between px-8 py-4 bg-zinc-950">
                 <div className="w-20 flex-none">
                     <Link className="p-2 flex justify-between items-center" to="/">
                         <GiAbstract005 size={50} className="flex-none rounded-sm text-white bg-emerald-500"/>

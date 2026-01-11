@@ -3,6 +3,11 @@ import Header from "../components/Header"
 
 function Cart({cartContent}) {
 
+  const totalPrice = cartContent.reduce(
+        (sum, item) => sum + (item.id * item.amount),
+        0
+    );
+
   const cartList = cartContent.map(item =>
 
     <li key={item.id} className="flex m-4 items-center bg-zinc-800 rounded-lg">
@@ -19,14 +24,20 @@ function Cart({cartContent}) {
   return (
     <>
     <Header cartContent={cartContent} />
-    <main className="p-8 bg-black">
-      <h1 className="pb-8 font-default text-zinc-200 text-6xl font-bold">
-        Shoppingcart
-      </h1>
+    <main className="p-25 bg-black min-h-dvh">
       <div className="flex w-full">
-        <ul className="w-2/3 pr-16">{cartList}</ul>
+        <div className="w-2/3">
+          <h1 className="pb-8 font-default text-zinc-200 text-6xl font-bold">
+            Cart
+          </h1>
+          <ul className="pr-16">{cartList}</ul>
+        </div>
         <aside>
-          <h2></h2>
+          <h2 className="pb-8 font-default text-zinc-200 text-3xl font-bold">
+            Checkout information
+          </h2>
+          <p className="font-default text-zinc-200 text-xl">Total price:</p>
+          <p className="pb-12 font-default text-zinc-200 text-3xl font-bold">CHF {totalPrice}</p>
           <Button callToAction="Go to checkout"/>
         </aside>
       </div>

@@ -33,7 +33,7 @@ function Product({
                 ...prev,
                 {
                     ...product,
-                    amount: cartAmount
+                    amount: cartAmount,
                 }
             ];
         });    
