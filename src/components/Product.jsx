@@ -55,7 +55,7 @@ function Product({
         </div>
         <div className="flex items-stretch p-2 w-full mt-2">
             <button 
-                className="w-2/3 h-10 bg-emerald-400 px-2 py-1 rounded-l-md"
+                className="w-2/3 h-10 bg-emerald-400 px-2 py-1 rounded-l-md cursor-pointer"
                 onClick={pushToCart}
                 >
                 Add to cart
