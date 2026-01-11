@@ -11,6 +11,9 @@ function Product({
 
     const [cartAmount, setCartAmount] = useState(1);    
 
+    //Make first letter of item name upercase
+    const itemName = productName.charAt(0).toUpperCase() + productName.slice(1);
+
     //Push product to cart
     function pushToCart() {
         setCartContent(prev => {
@@ -44,10 +47,10 @@ function Product({
         <div>
             <img className="rounded-t-lg" src={productImg} alt={productAlt}></img>
             <h2 className="text-2xl pl-2 pt-2 font-bold text-zinc-200">
-                {productName}
+                {itemName}
             </h2>
             <p className=" text-lg pl-2 text-zinc-200">
-                {productPrice}
+                CHF {productPrice}
             </p>
         </div>
         <div className="flex items-stretch p-2 w-full mt-2">
