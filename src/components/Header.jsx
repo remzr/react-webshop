@@ -2,6 +2,11 @@ import { Link, NavLink } from "react-router";
 import { GiAbstract005 } from "react-icons/gi";
 
 function Header({cartContent}) {
+    const totalItems = cartContent.reduce(
+        (sum, item) => sum + item.amount,
+        0
+    );
+
     return(
         <header className="flex w-full justify-between px-8 py-4 bg-zinc-900">
                 <div className="w-20 flex-none">
@@ -34,7 +39,7 @@ function Header({cartContent}) {
                             Shop
                             </NavLink>
                         </li>
-                        <li className="w-full">
+                        <li className="w-full flex">
                             <NavLink to="/cart" 
                             className={({ isActive, isPending }) => 
                                 `font-default text-lg text-zinc-200 transition
@@ -44,9 +49,10 @@ function Header({cartContent}) {
                             }>
                             Cart
                             </NavLink>
-                                {cartContent > 0 && (
-                                    <div className="text-zinc-200 bg-emerald-500 h-2 w-2 rounded-full">
-                                        {cartContent.length}
+                                {cartContent.length > 0 && (
+                                    <div className="text-zinc-200 text-xs bg-emerald-500 h-4 w-4
+                                    text-center rounded-full">
+                                        {totalItems}
                                     </div>
                                 )}
                         </li>
