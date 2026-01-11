@@ -14,15 +14,30 @@ function Product({
 
     //Push product to cart
     function pushToCart() {
+        setCartContent(prev => {
+            //Check if item id is aleady in cartContent
+            const existing = prev.find(item => item.id === product.id);
 
-        //Add cart amount
-        product.amount = product.amount + cartAmount;
+            //If id exists, return a new array with new item
+            if(existing) {
+                return prev.map(item =>
+                    item.id === product.id
+                        ? {
+                            ...item,
+                            amount: item.amount + cartAmount
+                        }
+                    : item
+                );
+            }
 
-        setCartContent({
-            ...cartContent,
-            product
-        })
-        console.log(`${product.name} has been added to cart ${product.amount} times.`);
+            return [
+                ...prev,
+                {
+                    ...product,
+                    amount: cartAmount
+                }
+            ];
+        });    
     }
 
     return (
@@ -45,7 +60,7 @@ function Product({
             </button>
             <input 
                 className="w-1/3 h-10 bg-zinc-800 border-solid border-emerald-400 border-2 rounded-r-md text-center text-zinc-200"
-                onChange={e => setCartAmount(e.target.value)}
+                onChange={e => setCartAmount(Number(e.target.value))}
                 type="number"
                 value={cartAmount}
                 name="cartAmount"
