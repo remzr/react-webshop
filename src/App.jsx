@@ -11,14 +11,21 @@ function App() {
   //Hooks and variables
   const [inventoryData, setInventoryData] = useState([]);
   const [cartContent, setCartContent] = useState([]);
+  const [error, setError] = useState(null);
+  const [loaded, setLoaded] = useState(false);
 
   //Fetch shop data
   useEffect(() => {
     fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/category/equipment")
-      .then(res => res.json())
-      .then(json => {
-        setInventoryData(json.data);
-    });
+      .then((res) => {
+        if (res.status >= 400) {
+          throw new Error("server error");
+        }
+        return res.json();
+      })
+      .then((json) => setInventoryData(json.data))
+      .catch((error) => setError(error))
+      .finally(() => setLoaded(false));
   }, []);
 
   const router = createBrowserRouter([
