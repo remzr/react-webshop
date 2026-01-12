@@ -24,11 +24,11 @@ function Shop({inventoryData, cartContent, setCartContent}) {
   return (
     <>
     <Header cartContent={cartContent} />
-    <main className="p-25 bg-black min-h-dvh">
+    <main className="p-8 md:p-25 bg-black min-h-dvh">
         <h1 className="pb-8 font-default text-zinc-200 text-6xl font-bold">
             Shop
         </h1>
-        <ul className="w-full flex gap-4 flex-wrap">
+        <ul className="w-full gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {cardsList}
         </ul>
     </main>

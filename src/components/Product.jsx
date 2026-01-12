@@ -43,9 +43,15 @@ function Product({
     }
 
     return (
-       <div className="w-1/7 min-w-full rounded-lg mb-4 bg-zinc-900 sm:min-w-52">
+       <div className="w-1/7 min-w-full rounded-lg mb-4 bg-zinc-900">
         <div>
-            <img className="rounded-t-lg" src={productImg} alt={productAlt}></img>
+            <div className="w-full rounded-t-lg overflow-hidden">
+                <img 
+                    className="w-full object-cover" 
+                    src={productImg} 
+                    alt={productAlt}>
+                </img>
+            </div>
             <h2 className="text-2xl pl-2 pt-2 font-bold text-zinc-200">
                 {itemName}
             </h2>
