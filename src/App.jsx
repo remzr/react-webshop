@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 
 import Home from './pages/Home'
@@ -44,7 +44,8 @@ function App() {
   {
     path: "cart",
     element: <Cart 
-    cartContent={cartContent}/>,
+    cartContent={cartContent}
+    setCartContent={setCartContent}/>,
   }
 ])
 

@@ -2,7 +2,7 @@ import Button from "../components/Button"
 import Cartitem from "../components/Cartitem";
 import Header from "../components/Header"
 
-function Cart({cartContent}) {
+function Cart({cartContent, setCartContent}) {
 
   const totalPrice = cartContent.reduce(
         (sum, item) => sum + (item.id * item.amount),
@@ -13,7 +13,7 @@ function Cart({cartContent}) {
   const emptyCart = <li className="text-zinc-200 text-lg">No items in cart</li>;
 
   const cartList = cartContent.map(item =>
-    <Cartitem item={item} cartContent={cartContent} />
+    <Cartitem key={item.id} item={item} cartContent={cartContent} setCartContent={setCartContent} />
   )
 
   return (
